@@ -9,10 +9,36 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Roko&#39;s Basilisk.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.16" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="1" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Intro" tags="" position="404,170" size="100,100">Welcome to the Digital Game.
+<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.15" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="1" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}</script><tw-passagedata pid="1" name="Game Intro" tags="" position="404,170" size="100,100">Welcome to the Digital Game.
 [[Enter|Game Start]]</tw-passagedata><tw-passagedata pid="2" name="Game Start" tags="" position="404,320" size="100,100">(set: $Money to 10)
 (set: $AI_Morality to 0)
-You are an AI Researcher with 1000 * $$Money</tw-passagedata></tw-storydata>
+Congratulations! Out of thousands of applicants, you have been selected for work and research at Lucidity AI, a highly prestigious company who has goals of expanding connections with local and global industries alike.
+
+You’re a budding researcher in the AI industry who, after years of studying and hard work, has finally received a grant from a small engineering company. They need help with mechanical operation.
+Grant amount: $(string: $Money)K
+[[Your Automation Task|Factory Automation]]</tw-passagedata><tw-passagedata pid="3" name="Factory Automation" tags="" position="404,470" size="100,100">In your first year, you are assigned the task of automating machinery for the industrial setting. This research will skyrocket efficiency and output in the industry but inevitably will displace the income of many lower class people.
+
+This task will cost you 5k, leaving 5k for your choice of research. 
+Some research will cost you more than others, and some will be a personal moral choice. Every decision teaches the A.I.. You are also responsible for keeping your company and research afloat - which means accepting offers and business deals with morally questionable investors, but you do what you must. 
+
+When you receive investments and grants, you can use that money to accomplish the task given and choose other fields to research in. Some opportunities will provide more return on your investment but may cause negative progression in A.I..
+
+Be cautious - your choices have profound effects.
+
+[[Accept|
+[[Refuse|</tw-passagedata><tw-passagedata pid="4" name="Game Over: Out of Money" tags="" position="524,470" size="100,100">(set: $Money to 0)
+Grant Amount: $(str: $Money)K</tw-passagedata><tw-passagedata pid="5" name="Year 1" tags="" position="405,603" size="100,100">Year 1 Proposals
+
+[[Facial expression reading for job hiring|Facial Recognition for Hiring]]
+[[Ability to have a conversation|Conversational Ability]]
+[[Ability to create art and music|Art Creation]]
+[[Read traffic patterns and change stoplights|Traffic Patterns]]
+
+
+[[Submit Year Plan|Year 1 Results]]</tw-passagedata><tw-passagedata pid="6" name="Facial Recognition for Hiring" tags="" position="180,753" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="7" name="Conversational Ability" tags="" position="330,753" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="8" name="Art Creation" tags="" position="480,753" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="Traffic Patterns" tags="" position="630,753" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="Year 1 Results" tags="" position="400,916" size="100,100">
+[[Year 2|Year 2]]</tw-passagedata><tw-passagedata pid="11" name="Year 2" tags="" position="400,1066" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
