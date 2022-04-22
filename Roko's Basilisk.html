@@ -254,7 +254,7 @@ Projected Profits: (String: 1,500)K
 [[Accept|Missiles Accept]]
 [[Refuse|Missiles Refuse]]
 [[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="40" name="Year 3 Results" tags="" position="400,3000" size="100,100">(if: $refusedmoney &gt; 2200)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.]
-(else-if: $sentience &lt; 5)[(set: $refusedmoney = 0)
+(else-if: $Sentience &lt; 5)[(set: $refusedmoney = 0)
 (set: $climate = 0)
 (set: $military = 0)
 (set: $politics = 0)
@@ -337,7 +337,7 @@ Projected Profits: $(String: 5,800)K
 [[Accept|Market Accept]]
 [[Refuse|Market Refuse]]
 [[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="56" name="Year 4 Results" tags="" position="400,4000" size="100,100">(if: $refusedmoney &gt; 6000)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.]
-(else-if: $sentience &lt; 9)[Brilliant work, Dr. Roko! Your company has gained international acclaim, and Lucidity has helped billions around the world! You are awarded Nobel Prizes in Economic Sciences, Peace, and Physiology. Through the power of AI, you’ve changed humanity for the better. Congratulations!]
+(else-if: $Sentience &lt; 9)[Brilliant work, Dr. Roko! Your company has gained international acclaim, and Lucidity has helped billions around the world! You are awarded Nobel Prizes in Economic Sciences, Peace, and Physiology. Through the power of AI, you’ve changed humanity for the better. Congratulations!]
 (else:)[Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!]</tw-passagedata><tw-passagedata pid="57" name="Climate Accept" tags="" position="200,3300" size="100,100">On the brink of no return from the climate crisis, the world’s governments commit to Lucidity’s plan. They cut out fossil fuel emissions, sequester carbon, and become sustainable nations. Although the damage that has already been done to the environment these past decades continues, the long term survival of the Earth is at last secured.
 (set: $Money = $Money + 2500)(set: $Sentience = $Sentience - 2)(set: $climate = 1)
 [[You&#39;ve earned $(str: 2,500)K|Year 4]]</tw-passagedata><tw-passagedata pid="58" name="Climate Refuse" tags="" position="100,3500" size="100,100">(set: $climate = -1)
