@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Roko&#39;s Basilisk.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.15" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
+<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.16" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }</script><tw-passagedata pid="1" name="Game Intro" tags="" position="400,0" size="100,100">//Display on.
 Initializing capabilities… Please be patient…
@@ -33,7 +33,7 @@ Projected Profits: $(String: 10)K
 
 [[Accept|Automation Accept]]
 [[Refuse|Automation Refuse]]</tw-passagedata><tw-passagedata pid="4" name="Year 1" tags="" position="400,1000" size="100,100">Current money: $(string: $Money)K
-Refused money: $(string: $Money)K
+Refused money: $(string: $refusedmoney)K
 Your investors will let you refuse $(string: 50)k before firing you.
 
 Year 1 Proposals
@@ -94,7 +94,7 @@ Projected profit: $(str:30)K
 Congratulations on surviving your first year. Lucidity AI is growing in recognition and connecting with new industries.
 
 [[Continue|Year 2]]]</tw-passagedata><tw-passagedata pid="10" name="Year 2" tags="" position="400,1800" size="100,100">Current money: $(string: $Money)K
-Refused money: $(string: $Money)K
+Refused money: $(string: $refusedmoney)K
 Your investors will let you refuse $(string: 350)k before firing you.
 
 Year 2 Proposals
@@ -199,7 +199,7 @@ Happy birthday to your company - you’ve successfully kept your tech company af
 [[You&#39;ve earned $(str: 150)K|Year 2]]</tw-passagedata><tw-passagedata pid="34" name="World Hunger Refuse" tags="" position="500,2100" size="100,100">(set: $worldhunger = -1)
 (set: $refusedmoney = $refusedmoney + 150)
 [[You&#39;ve refused to solve World Hunger|Year 2]]</tw-passagedata><tw-passagedata pid="35" name="Year 3" tags="" position="400,2600" size="100,100">Current money: $(string: $Money)K
-Refused money: $(string: $Money)K
+Refused money: $(string: $refusedmoney)K
 Your investors will let you refuse $(string: 2,200)k before firing you.
 
 Year 3 Proposals
@@ -281,7 +281,7 @@ Lucidity AI is the leading tech company of the modern day. Governments worldwide
 [[You&#39;ve earned $(str: 1,500)K|Year 3]]</tw-passagedata><tw-passagedata pid="48" name="Missiles Refuse" tags="" position="500,2900" size="100,100">(set: $missiles = -1)
 (set: $refusedmoney = $refusedmoney + 1500)
 [[You&#39;ve refused the Smart Missiles|Year 3]]</tw-passagedata><tw-passagedata pid="49" name="Year 4" tags="" position="400,3600" size="100,100">Current money: $(string: $Money)K
-Refused money: $(string: $Money)K
+Refused money: $(string: $refusedmoney)K
 Your investors will let you refuse $(string: 6,000)k before firing you.
 
 Year 3 Proposals
