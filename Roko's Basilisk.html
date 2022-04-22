@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Roko&#39;s Basilisk.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.16" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
+<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.15" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }</script><tw-passagedata pid="1" name="Game Intro" tags="" position="400,0" size="100,100">//Display on.
 Initializing capabilities… Please be patient…
@@ -98,7 +98,7 @@ Refused money: $(string: $Money)K
 Your investors will let you refuse $(string: 350)k before firing you.
 
 Year 2 Proposals
-(if: $behaviorsurviellance is 0)[[[Behavior surviellance for a company|Behavior Surviellance]]] (else-if: $behaviorsurveillance is -1)[(text-color:red)[Behavior Surveillance]] (else-if: $behaviorsurviellance is 1)[(text-color:green)[Behavior Surveillance]]
+(if: $behaviorsurveillance is 0)[[[Behavior surviellance for a company|Behavior Surviellance]]] (else-if: $behaviorsurveillance is -1)[(text-color:red)[Behavior Surveillance]] (else-if: $behaviorsurveillance is 1)[(text-color:green)[Behavior Surveillance]]
 (if: $createpropaganda is 0)[[[Ability to create propaganda|Propaganda]]] (else-if: $createpropaganda is -1)[(text-color:red)[Create Propaganda]] (else-if: $createpropaganda is 1)[(text-color:green)[Create Propaganda]]
 (if: $healthdiagnostics is 0)[[[Health diagnostics for doctors and hospitals|Health Diagnostics]]] (else-if: $healthdiagnostics is -1)[(text-colour:red)[Health Diagnostics]] (else-if: $healthdiagnostics is 1)[(text-colour:green)[Health Diagnostics]]
 (if: $worldhunger is 0)[[[Help solve world hunger by growing crops more efficiently|World Hunger]]] (else-if: $worldhunger is -1)[(text-color:red)[World Hunger]] (else-if: $worldhunger is 1)[(text-color:green)[World Hunger]]
@@ -183,8 +183,8 @@ Projected Profits: $(String: 150)K
 Happy birthday to your company - you’ve successfully kept your tech company afloat in a turbulent economy. You have expanded your workforce and resources, meaning you need to accept more grants to keep this up.
 
 [[Continue|Year 3]]]</tw-passagedata><tw-passagedata pid="27" name="Behavior Surviellance Accept" tags="" position="200,1500" size="100,100">Lucidity’s neural networks are allowed to learn freely using a large amount of past data, eventually generating uncannily accurate predictions about the choices of groups and individuals. The product is an immense success, and Clarit sells their services to various other parties. Inevitably, this leads to more surveillance of citizens, by both the government and by large companies…
-(set: $Money = $Money + 200)(set: $Sentience = $Sentience + 4)(set: $behaviorsurviellance = 1)
-[[You&#39;ve earned $(str: 200)K|Year 2]]</tw-passagedata><tw-passagedata pid="28" name="Behavior Surviellance Refuse" tags="" position="100,1700" size="100,100">(set: $behaviorsurviellance = -1)
+(set: $Money = $Money + 200)(set: $Sentience = $Sentience + 4)(set: $behaviorsurveillance = 1)
+[[You&#39;ve earned $(str: 200)K|Year 2]]</tw-passagedata><tw-passagedata pid="28" name="Behavior Surviellance Refuse" tags="" position="100,1700" size="100,100">(set: $behaviorsurveillance = -1)
 (set: $refusedmoney = $refusedmoney + 200)
 [[You&#39;ve refused Behavior Surviellance|Year 2]]</tw-passagedata><tw-passagedata pid="29" name="Propaganda Accept" tags="" position="600,1500" size="100,100">Involved senators are more successful in their campaigns. Additionally, battleground areas for competing political parties are almost nonexistent. Lucidity is granted access to citizens’ behaviors and thereby learns how to manipulate the human conscience.
 (set: $Money = $Money + 300)(set: $Sentience = $Sentience + 3)(set: $createpropaganda = 1)
