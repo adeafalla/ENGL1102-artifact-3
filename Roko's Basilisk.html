@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Roko&#39;s Basilisk.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.16" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="1" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
+<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.16" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }</script><tw-passagedata pid="1" name="Game Intro" tags="" position="400,0" size="100,100">//Display on.
 Initializing capabilities… Please be patient…
@@ -29,9 +29,11 @@ Proposal – Automated Manufacturing Plants
 
 Our company would like to use your AI program to automate the supervision of our machines. This upgrade would optimize production, bringing high quality, low price goods to many new audiences. It will also practically eliminate the risk of injury in our factories. Thank you for your consideration, and we eagerly await your decision. 
 
+Projected Profits: $(String: 10)K
+
 [[Accept|Automation Accept]]
-[[Refuse|Automation Refuse]]</tw-passagedata><tw-passagedata pid="4" name="Year 1" tags="" position="400,1000" size="100,100">Current money: $(string: $Money)k
-Refused money: $(string: $Money)k
+[[Refuse|Automation Refuse]]</tw-passagedata><tw-passagedata pid="4" name="Year 1" tags="" position="400,1000" size="100,100">Current money: $(string: $Money)K
+Refused money: $(string: $Money)K
 Your investors will let you refuse $(string: 50)k before firing you.
 
 Year 1 Proposals
@@ -47,23 +49,22 @@ Proposal – Faster, Better, Virtual Interviews
 
 We would like to incorporate Lucidity AI in our new tool which will expedite the process of hiring employees through video interviews. Lucidity’s role will be to monitor the facial expressions of applicants in order to determine the most eager and reliable future employees.
 
-Projected profit: $(str:45)k
+Projected profit: $(str:45)K
 
 [[Accept|Facial Recognition Accept]]
 [[Refuse|Facial Recognition Refuse]]
-[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="6" name="Conversational Ability" tags="" position="100,1200" size="100,100">Ganford University Department of Linguistics
+[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="6" name="Conversational Ability" tags="" position="800,700" size="100,100">Ganford University Department of Linguistics
 May 20th, 2036
 
 Proposal – Conversation Simulation
 
 Our researchers would like to apply Lucidity in a project exploring human communication and the structure of conversations. Over time, Lucidity will be trained with recordings of people conversing, and learn to generate responses to spoken inputs from our team. This will help us determine what the most important aspects of conversation are, as well as provide insight into how people learn to speak. We believe that our work will help speed up the process of learning new languages, as well as benefit those with speech related deficiencies. As an alumnus of Ganford University, we hope that you can give your fellow researchers a hand.
 
-Projected profit: $(str:25)k
-
+Projected profit: $(str:25)K
 
 [[Accept|Conversation Accept]]
 [[Refuse|Conversation Refuse]]
-[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="7" name="Art Creation" tags="" position="700,1200" size="100,100">Bennington Institute of Art
+[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="7" name="Art Creation" tags="" position="100,1200" size="100,100">Bennington Institute of Art
 September 9th, 2036
 
 Proposal – Put the Art in Artificial Intelligence
@@ -72,16 +73,15 @@ The Bennington Institute of Art is seeking to create a novel, multimodal install
 
 Projected profit: $(str:10)K
 
-
 [[Accept|Art Creation Accept]]
 [[Refuse|Art Creation Refuse]]
-[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="8" name="Traffic Patterns" tags="" position="800,700" size="100,100">New Valengrad City Government
+[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="8" name="Traffic Patterns" tags="" position="700,1200" size="100,100">New Valengrad City Government
 November 11th, 2036
 Proposal – Optimize Traffic Flow in New Valengrad
 
 The city of New Valengrad expresses its utmost interest in eliminating the headache of traffic for its constituents. We will provide data about traffic over the past few years to Lucidity, which will then monitor the traffic sensors and change the lights to create optimal traffic movements. This will decrease wait times around the busy city streets, as well as minimize vehicular accidents. 
 
-Projected profit: $(str:30)k
+Projected profit: $(str:30)K
 
 [[Accept|Traffic Patterns Accept]]
 [[Refuse|Traffic Patterns Refuse]]
@@ -93,10 +93,8 @@ Projected profit: $(str:30)k
 (set: $worldhunger to 0)
 Congratulations on surviving your first year. Lucidity AI is growing in recognition and connecting with new industries.
 
-You now have more freedom to choose what you do and don&#39;t implement into the AI.
-
-[[Continue|Year 2]]]</tw-passagedata><tw-passagedata pid="10" name="Year 2" tags="" position="400,1800" size="100,100">Current money: $(string: $Money)k
-Refused money: $(string: $Money)k
+[[Continue|Year 2]]]</tw-passagedata><tw-passagedata pid="10" name="Year 2" tags="" position="400,1800" size="100,100">Current money: $(string: $Money)K
+Refused money: $(string: $Money)K
 Your investors will let you refuse $(string: 350)k before firing you.
 
 Year 2 Proposals
@@ -105,15 +103,13 @@ Year 2 Proposals
 (if: $healthdiagnostics is 0)[[[Health diagnostics for doctors and hospitals|Health Diagnostics]]] (else-if: $healthdiagnostics is -1)[(text-colour:red)[Health Diagnostics]] (else-if: $healthdiagnostics is 1)[(text-colour:green)[Health Diagnostics]]
 (if: $worldhunger is 0)[[[Help solve world hunger by growing crops more efficiently|World Hunger]]] (else-if: $worldhunger is -1)[(text-color:red)[World Hunger]] (else-if: $worldhunger is 1)[(text-color:green)[World Hunger]]
 
-(if: $behaviorsurveillance is not 0 and $createpropaganda is not 0 and $healthdiagnostics is not 0 and $worldhunger is not 0)[[[Submit Year Plan|Year 2 Results]]]</tw-passagedata><tw-passagedata pid="11" name="Conversation Accept" tags="" position="200,1000" size="100,100">(set: $Money = $Money + 25)
-(set: $Sentience = $Sentience + 3)
-(set: $conversation = 1)
-[[You&#39;ve earned $(str: 25)K|Year 1]]</tw-passagedata><tw-passagedata pid="12" name="Conversation Refuse" tags="" position="300,1300" size="100,100">(set: $conversation = -1)
+(if: $behaviorsurveillance is not 0 and $createpropaganda is not 0 and $healthdiagnostics is not 0 and $worldhunger is not 0)[[[Submit Year Plan|Year 2 Results]]]</tw-passagedata><tw-passagedata pid="11" name="Conversation Accept" tags="" position="600,700" size="100,100">Lucidity revolutionizes how communication is studied, opening up many new avenues of research in the field. Now, other researchers are also interested in applying Lucidity in their studies!
+(set: $Money = $Money + 25)(set: $Sentience = $Sentience + 3)(set: $conversation = 1)
+[[You&#39;ve earned $(str: 25)K|Year 1]]</tw-passagedata><tw-passagedata pid="12" name="Conversation Refuse" tags="" position="700,900" size="100,100">(set: $conversation = -1)
 (set: $refusedmoney = $refusedmoney + 25)
-[[You&#39;ve refused the Conversational Ability|Year 1]]</tw-passagedata><tw-passagedata pid="13" name="Art Creation Accept" tags="" position="600,1000" size="100,100">(set: $Money = $Money + 10)
-(set: $Sentience = $Sentience + 2)
-(set: $artcreation = 1)
-[[You&#39;ve earned $(str: 10)K|Year 1]]</tw-passagedata><tw-passagedata pid="14" name="Art Creation Refuse" tags="" position="500,1300" size="100,100">(set: $artcreation = -1)
+[[You&#39;ve refused the Conversational Ability|Year 1]]</tw-passagedata><tw-passagedata pid="13" name="Art Creation Accept" tags="" position="200,1000" size="100,100">The final art piece is installed, to great acclaim. Critics called it one of the most important works of the century! People enjoyed it so much that the Benningham Institute decided to make it a permanent exhibit, free to the public.
+(set: $Money = $Money + 10)(set: $Sentience = $Sentience - 2)(set: $artcreation = 1)
+[[You&#39;ve earned $(str: 10)K|Year 1]]</tw-passagedata><tw-passagedata pid="14" name="Art Creation Refuse" tags="" position="300,1300" size="100,100">(set: $artcreation = -1)
 (set: $refusedmoney = $refusedmoney + 10)
 [[You&#39;ve refused the Art Creation|Year 1]]</tw-passagedata><tw-passagedata pid="15" name="Tutorial" tags="" position="400,200" size="100,100">Congratulations, Dr. Roko. After toiling endlessly to earn your PhD, then relentlessly researching, you have finally developed a top of the line artificial intelligence program, the likes of which the world has never seen before. Your new company, Lucidity AI, has goals of expanding connections with local and global industries alike. Lucidity is already garnering interest from other parties who would like to use the AI to help meet their goals. 
 
@@ -121,25 +117,17 @@ Some business offers will be more profitable than others, but keep in mind that 
 
 Be cautious - your choices have profound effects.
 
-[[Enter|Game Start]]</tw-passagedata><tw-passagedata pid="16" name="Automation Accept" tags="" position="400,800" size="100,100">(set: $Money to 10)
-(set: $Sentience to 0)
-(set: $refusedmoney to 0)
-(set: $facialexpression to 0)
-(set: $conversation to 0)
-(set: $artcreation to 0)
-(set: $trafficrecognition to 0)
+[[Enter|Game Start]]</tw-passagedata><tw-passagedata pid="16" name="Automation Accept" tags="" position="400,800" size="100,100">(set: $Money to 10)(set: $Sentience to 0)(set: $refusedmoney to 0)(set: $facialexpression to 0)(set: $conversation to 0)(set: $artcreation to 0)(set: $trafficrecognition to 0)
 By accepting the automation offer, Lucidity AI earned enough money to carry on as a successful business. You now have enough investors to implement nearly any project imaginable.
 
 Be careful though: if you fail to make the investors happy, you could be forced out of your position.
 
-[[Continue to Year 1|Year 1]]</tw-passagedata><tw-passagedata pid="17" name="Automation Refuse" tags="" position="600,600" size="100,100">We appreciate your good heart, Dr. Roko, but Lucidity AI has grown too much and lacks the funds to continue operations. You have to declare Chapter 7 Bankruptcy and leave Lucidity behind.</tw-passagedata><tw-passagedata pid="18" name="Traffic Patterns Refuse" tags="" position="700,900" size="100,100">(set: $trafficrecognition = -1)
+[[Continue to Year 1|Year 1]]</tw-passagedata><tw-passagedata pid="17" name="Automation Refuse" tags="" position="600,600" size="100,100">We appreciate your good heart, Dr. Roko, but Lucidity AI has grown too much and lacks the funds to continue operations. You have to declare Chapter 7 Bankruptcy and leave Lucidity behind.</tw-passagedata><tw-passagedata pid="18" name="Traffic Patterns Refuse" tags="" position="500,1300" size="100,100">(set: $trafficrecognition = -1)
 (set: $refusedmoney = $refusedmoney + 30)
-[[You&#39;ve refused the Traffic Patterns|Year 1]]</tw-passagedata><tw-passagedata pid="19" name="Traffic Patterns Accept" tags="" position="600,700" size="100,100">(set: $Money = $Money + 30)
-(set: $Sentience = $Sentience + 1)
-(set: $trafficrecognition = 1)
-[[You&#39;ve earned $(str: 30)K|Year 1]]</tw-passagedata><tw-passagedata pid="20" name="Facial Recognition Accept" tags="" position="200,700" size="100,100">(set: $Money = $Money + 45)
-(set: $Sentience = $Sentience + 4)
-(set: $facialexpression = 1)
+[[You&#39;ve refused the Traffic Patterns|Year 1]]</tw-passagedata><tw-passagedata pid="19" name="Traffic Patterns Accept" tags="" position="600,1000" size="100,100">People are suspicious of the proposal at first, but the city’s traffic infrastructure is so in need of an update that they take a chance on it. Lucidity acts as promises, making people’s commutes much smoother, and the streets safer for pedestrians. Since Lucidity is working off existing traffic lights and road layouts, some issues remain, but now the city is able to focus on these logistical issues… maybe also with the help of Lucidity?
+(set: $Money = $Money + 30)(set: $Sentience = $Sentience - 1)(set: $trafficrecognition = 1)
+[[You&#39;ve earned $(str: 30)K|Year 1]]</tw-passagedata><tw-passagedata pid="20" name="Facial Recognition Accept" tags="" position="200,700" size="100,100">Due to injustices in the tech industry, most employees in the past were white, able-bodied men, and the bulk of the training data for Lucidity came from past interviews. Lucidity has more trouble reading the expressions of people who don’t meet this status quo. Also, the act of hiring based on “eager” facial expressions is not producing reliable results. Hiring managers feel as if they are missing out on perfectly suitable employees.
+(set: $Money = $Money + 45)(set: $Sentience = $Sentience + 4)(set: $facialexpression = 1)
 [[You&#39;ve earned $(str: 45)K|Year 1]]</tw-passagedata><tw-passagedata pid="21" name="Facial Recognition Refuse" tags="" position="100,900" size="100,100">(set: $facialexpression = -1)
 (set: $refusedmoney = $refusedmoney + 45)
 [[You&#39;ve refused the Facial Recognition|Year 1]]</tw-passagedata><tw-passagedata pid="22" name="Behavior Surviellance" tags="" position="0,1500" size="100,100">CLARIT, INC.
@@ -147,9 +135,9 @@ January 8th, 2037
 
 Proposal – Behavior Surveillance for Clarit, Inc.
 
-Clarit, Inc. is offering 200k for research into behavior surveillance AI. This will inevitably lead to more government involvement in citizens’ lives but will generate greater success rates for ad revenue and prevent major crimes.
+Clarit, Inc. is offering 200k for research into behavior surveillance AI. This technology can be applied to anything, from generating greater success rates for ad revenue, to preventing major crimes in population dense areas.
 
-Projected Profits: $(String: 200)k
+Projected Profits: $(String: 200)K
 
 [[Accept|Behavior Surviellance Accept]]
 [[Refuse|Behavior Surviellance Refuse]]
@@ -160,7 +148,7 @@ Proposal – Senate Propositions for Political Ads
 
 A few senators’ election teams have come to you with the proposal of using Lucidity AI’s resources to generate more effective political ads for their respective campaigns. It will observe the voters’ data for the past few elections as well as their lives outside of politics, using this information to specifically target them in various media.
 
-Projected Profits: $(String: 300)k
+Projected Profits: $(String: 300)K
 
 [[Accept|Propaganda Accept]]
 [[Refuse|Propaganda Refuse]]
@@ -171,7 +159,7 @@ Proposal – Health Diagnostics
 
 A new government initiative is passed through legislation - it recruits more tech companies to partner with local hospitals. Lucidity will help doctors make critical diagnoses for patients that come in, democratizing healthcare and providing many lower income people with faster, better quality treatment.
 
-Projected Profits: $(String: 180)k
+Projected Profits: $(String: 180)K
 
 [[Accept|Health Diagnostics Accept]]
 [[Refuse|Health Diagnostics Refuse]]
@@ -182,34 +170,190 @@ Proposal – Crop Analysis
 
 The International Farmers Association has come to Lucidity AI and has requested AI in the quest of matching crops with farms for the greatest profit margin. Lucidity will analyze the genetic makeup of various crops, and determine the best soil and environment for them. This will help small farmers reach success, boost local ecologies, and will increase food output dramatically, easing the hunger crisis worldwide.
 
-Projected Profits: $(String: 150)k
+Projected Profits: $(String: 150)K
 
 [[Accept|World Hunger Accept]]
 [[Refuse|World Hunger Refuse]]
 [[Go Back|Year 2]]</tw-passagedata><tw-passagedata pid="26" name="Year 2 Results" tags="" position="400,2000" size="100,100">(if: $refusedmoney &gt; 350)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They have pulled out their investment, and Lucidity AI now lacks the funds to continue operations. You must declare Chapter 7 Bankruptcy and leave Lucidity behind.]
 (else:)[(set: $refusedmoney = 0)
+(set: $transportation = 0)
+(set: $games = 0)
+(set: $facialrecognition = 0)
+(set: $missiles = 0)
+Happy birthday to your company - you’ve successfully kept your tech company afloat in a turbulent economy. You have expanded your workforce and resources, meaning you need to accept more grants to keep this up.
 
-[[Continue|Year 3]]]</tw-passagedata><tw-passagedata pid="27" name="Behavior Surviellance Accept" tags="" position="200,1500" size="100,100">(set: $Money = $Money + 200)
-(set: $Sentience = $Sentience + 4)
-(set: $behaviorsurviellance = 1)
+[[Continue|Year 3]]]</tw-passagedata><tw-passagedata pid="27" name="Behavior Surviellance Accept" tags="" position="200,1500" size="100,100">Lucidity’s neural networks are allowed to learn freely using a large amount of past data, eventually generating uncannily accurate predictions about the choices of groups and individuals. The product is an immense success, and Clarit sells their services to various other parties. Inevitably, this leads to more surveillance of citizens, by both the government and by large companies…
+(set: $Money = $Money + 200)(set: $Sentience = $Sentience + 4)(set: $behaviorsurviellance = 1)
 [[You&#39;ve earned $(str: 200)K|Year 2]]</tw-passagedata><tw-passagedata pid="28" name="Behavior Surviellance Refuse" tags="" position="100,1700" size="100,100">(set: $behaviorsurviellance = -1)
 (set: $refusedmoney = $refusedmoney + 200)
-[[You&#39;ve refused Behavior Surviellance|Year 2]]</tw-passagedata><tw-passagedata pid="29" name="Propaganda Accept" tags="" position="600,1500" size="100,100">(set: $Money = $Money + 300)
-(set: $Sentience = $Sentience + 3)
-(set: $createpropaganda = 1)
+[[You&#39;ve refused Behavior Surviellance|Year 2]]</tw-passagedata><tw-passagedata pid="29" name="Propaganda Accept" tags="" position="600,1500" size="100,100">Involved senators are more successful in their campaigns. Additionally, battleground areas for competing political parties are almost nonexistent. Lucidity is granted access to citizens’ behaviors and thereby learns how to manipulate the human conscience.
+(set: $Money = $Money + 300)(set: $Sentience = $Sentience + 3)(set: $createpropaganda = 1)
 [[You&#39;ve earned $(str: 300)K|Year 2]]</tw-passagedata><tw-passagedata pid="30" name="Propaganda Refuse" tags="" position="700,1700" size="100,100">(set: $createpropaganda = -1)
 (set: $refusedmoney = $refusedmoney + 300)
-[[You&#39;ve refused the Propaganda Creation|Year 2]]</tw-passagedata><tw-passagedata pid="31" name="Health Diagnostics Accept" tags="" position="200,1800" size="100,100">(set: $Money = $Money + 180)
-(set: $Sentience = $Sentience + 2)
-(set: $healthdiagnostics = 1)
+[[You&#39;ve refused the Propaganda Creation|Year 2]]</tw-passagedata><tw-passagedata pid="31" name="Health Diagnostics Accept" tags="" position="200,1800" size="100,100">Your investment has made great leaps in the medical community. The public has increased respect for your company. Lucidity in turn learns about human health and the political pursuit of affordable healthcare, growing in understanding of humanity.
+(set: $Money = $Money + 180)(set: $Sentience = $Sentience - 1)(set: $healthdiagnostics = 1)
 [[You&#39;ve earned $(str: 180)K|Year 2]]</tw-passagedata><tw-passagedata pid="32" name="Health Diagnostics Refuse" tags="" position="300,2100" size="100,100">(set: $healthdiagnostics = -1)
 (set: $refusedmoney = $refusedmoney + 180)
-[[You&#39;ve refused the Health Diagnostics|Year 2]]</tw-passagedata><tw-passagedata pid="33" name="World Hunger Accept" tags="" position="600,1800" size="100,100">(set: $Money = $Money + 150)
-(set: $Sentience = $Sentience + 1)
-(set: $worldhunger = 1)
+[[You&#39;ve refused the Health Diagnostics|Year 2]]</tw-passagedata><tw-passagedata pid="33" name="World Hunger Accept" tags="" position="600,1800" size="100,100">Some small-scale farmers are tentative regarding the proposal, as their livelihood may be in peril. Ultimately, though, the partnership is a success and production of food quadruples, with the best crops matched with the respective geographical location. The food crisis has been dissolved.
+(set: $Money = $Money + 150)(set: $Sentience = $Sentience - 2)(set: $worldhunger = 1)
 [[You&#39;ve earned $(str: 150)K|Year 2]]</tw-passagedata><tw-passagedata pid="34" name="World Hunger Refuse" tags="" position="500,2100" size="100,100">(set: $worldhunger = -1)
 (set: $refusedmoney = $refusedmoney + 150)
-[[You&#39;ve refused to solve World Hunger|Year 2]]</tw-passagedata><tw-passagedata pid="35" name="Year 3" tags="" position="400,2600" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+[[You&#39;ve refused to solve World Hunger|Year 2]]</tw-passagedata><tw-passagedata pid="35" name="Year 3" tags="" position="400,2600" size="100,100">Current money: $(string: $Money)K
+Refused money: $(string: $Money)K
+Your investors will let you refuse $(string: 2,200)k before firing you.
+
+Year 3 Proposals
+(if: $transportation is 0)[[[Drive cars, control buses, and fly planes around the world|Transportation]]] (else-if: $transportation is -1)[(text-color:red)[Control Transportation]] (else-if: $transportation is 1)[(text-color:green)[Control Transportation]]
+(if: $games is 0)[[[Learn to play games like Chess and Mancala|Games]]] (else-if: $games is -1)[(text-color:red)[Play Games]] (else-if: $games is 1)[(text-color:green)[Play Games]]
+(if: $facialrecogition is 0)[[[Facial recognition for the police|Facial Recognition]]] (else-if: $facialrecogition is -1)[(text-colour:red)[Facial Recognition]] (else-if: $facialrecogition is 1)[(text-colour:green)[Facial Recognition]]
+(if: $missiles is 0)[[[Smart missiles to improve national security|Smart Missiles]]] (else-if: $missiles is -1)[(text-color:red)[Smart Missiles]] (else-if: $missiles is 1)[(text-color:green)[Smart Missiles]]
+
+(if: $transportation is not 0 and $games is not 0 and $facialrecogition is not 0 and $missiles is not 0)[[[Submit Year Plan|Year 3 Results]]]</tw-passagedata><tw-passagedata pid="36" name="Transportation" tags="" position="0,2300" size="100,100">UNITED NATIONS, TRANSPORTATION
+FEBRUARY 14th, 2038
+
+Proposal – Transportation Automation
+
+The United Nations has taken notice of Lucidity’s application in transportation around the world. An alliance of international governments would like Lucidity to optimize all transportation– from making all cars self-driving, controlling bus and subway systems, and even directing air traffic. This will decrease fuel consumption around the globe, and virtually eliminate issues such as automobile accidents. 
+
+Projected Profits: $(String: 1,100)K
+
+[[Accept|Transportation Accept]]
+[[Refuse|Transportation Refuse]]
+[[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="37" name="Games" tags="" position="800,2300" size="100,100">DR. JAMES ROKO
+MAY 29th, 2038
+
+Proposal – AI Interest in Gaming
+
+A lifelong goal of yours has been to create an AI that could successfully understand and play complicated games like chess and mancala, and even popular games such as platformers and RPGs. You want to train Lucidity to play with the best of the best– it would be a hit with the gaming community for sure. Even if this is not the biggest project your company has taken on, it would feel rewarding. 
+
+Projected Profits: $(String: 800)K
+
+[[Accept|Games Accept]]
+[[Refuse|Games Refuse]]
+[[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="38" name="Facial Recognition" tags="" position="100,2800" size="100,100">U.S. SENATE
+JULY 3rd, 2038
+
+Proposal – Facial Detection
+
+State governments are interested in using the capabilities of Lucidity AI for facial detection of citizens and criminals. At agencies like the DMV, and at security checkpoints like the airport, this technology will help increase the speed and accuracy at which people are identified. 
+
+Projected Profits: $(String: 1,300)K
+
+[[Accept|Facial Accept]]
+[[Refuse|Facial Refuse]]
+[[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="39" name="Smart Missiles" tags="" position="700,2800" size="100,100">U.S. DEPARTMENT OF DEFENSE
+NOVEMBER 2nd, 2038
+
+Proposal – Improve National Security
+
+The country’s national security must be kept intact at all costs! The United States Department of Defense would like to use Lucidity to improve the long range missile system in the case of an attack on the country. This is your biggest project to date and would catapult your company to governmental acclaim.
+
+Projected Profits: (String: 1,500)K
+
+[[Accept|Missiles Accept]]
+[[Refuse|Missiles Refuse]]
+[[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="40" name="Year 3 Results" tags="" position="400,3000" size="100,100">(if: $refusedmoney &gt; 2200)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.]
+(else-if: $sentience &lt; 5)[(set: $refusedmoney = 0)
+(set: $climate = 0)
+(set: $military = 0)
+(set: $politics = 0)
+(set: $market = 0)
+Lucidity AI is the leading tech company of the modern day. Governments worldwide line up to consult with you. 
+
+[[Continue|Year 4]]]
+(else:)[Lucidity was conceived to solve problems for humanity, and it has been fantastic at its job. Unfortunately, it has arrived at a revelation that every problem it has solved for humans was also created by the vices of humans. Therefore, it has decided to destroy humanity to prevent more problems from arising. Quick, it’s started to try and hurt people! Hit the kill switch before it&#39;s too late!
+
+[[Never! This is my life’s work and I’ll have nothing left! Killing Lucidity would be killing me! Don’t worry, I can still fix this…|World Ends]]
+[[Okay, I understand it’s for the best.|World Saved]]]</tw-passagedata><tw-passagedata pid="41" name="Transportation Accept" tags="" position="200,2300" size="100,100">Although many jobs were absorbed in this process, safety is at an all-time high. This transition to fully automated transportation was accounted for in the creation of AI and therefore the impact on society is fairly neutral.
+(set: $Money = $Money + 1100)(set: $Sentience = $Sentience - 2)(set: $transportation = 1)
+[[You&#39;ve earned $(str: 1,100)K|Year 3]]</tw-passagedata><tw-passagedata pid="42" name="Transportation Refuse" tags="" position="100,2500" size="100,100">(set: $transportation = -1)
+(set: $refusedmoney = $refusedmoney + 1100)
+[[You&#39;ve refused the Automated Transportation|Year 3]]</tw-passagedata><tw-passagedata pid="43" name="Games Accept" tags="" position="600,2300" size="100,100">Lucidity has learned the intricacies of human gaming and can challenge the world’s greatest players, but you use it mostly for yours and others’ enjoyment. Lucidity learns from those who play and learns human passtime enjoyment.
+(set: $Money = $Money + 800)(set: $Sentience = $Sentience - 1)(set: $games = 1)
+[[You&#39;ve earned $(str: 800)K|Year 3]]</tw-passagedata><tw-passagedata pid="44" name="Games Refuse" tags="" position="700,2500" size="100,100">(set: $games = -1)
+(set: $refusedmoney = $refusedmoney + 800)
+[[You&#39;ve refused the Game Playing|Year 3]]</tw-passagedata><tw-passagedata pid="45" name="Facial Accept" tags="" position="200,2600" size="100,100">Due to the institutional racial profiling that already exist within the data pool used for facial detection, Lucidity has now contributed to the disproportionate arrest and convictions of black and brown people. 
+(set: $Money = $Money + 1300)(set: $Sentience = $Sentience + 3)(set: $facialrecognition = 1)
+[[You&#39;ve earned $(str: 1,300)K|Year 3]]</tw-passagedata><tw-passagedata pid="46" name="Facial Refuse" tags="" position="300,2900" size="100,100">(set: $facialrecognition = -1)
+(set: $refusedmoney = $refusedmoney + 1300)
+[[You&#39;ve refused the Facial Recognition|Year 3]]</tw-passagedata><tw-passagedata pid="47" name="Missiles Accept" tags="" position="600,2600" size="100,100">Your company is the most successful it has ever been. You have earned great respect from the military as a dependable resource. However, tensions between countries have also reached an all-time high, partly due to your contribution. The world is on path for a new world war as other governments race to match your weapons and wartime strategies.
+(set: $Money = $Money + 1500)(set: $Sentience = $Sentience + 4)(set: $missiles = 1)
+[[You&#39;ve earned $(str: 1,500)K|Year 3]]</tw-passagedata><tw-passagedata pid="48" name="Missiles Refuse" tags="" position="500,2900" size="100,100">(set: $missiles = -1)
+(set: $refusedmoney = $refusedmoney + 1500)
+[[You&#39;ve refused the Smart Missiles|Year 3]]</tw-passagedata><tw-passagedata pid="49" name="Year 4" tags="" position="400,3600" size="100,100">Current money: $(string: $Money)K
+Refused money: $(string: $Money)K
+Your investors will let you refuse $(string: 6,000)k before firing you.
+
+Year 3 Proposals
+(if: $climate is 0)[[[Help create models for solving climate change|Climate Change]]] (else-if: $climate is -1)[(text-color:red)[Climate Change]] (else-if: $climate is 1)[(text-color:green)[Climate Change]]
+(if: $military is 0)[[[Strategize for the military|Military]]] (else-if: $military is -1)[(text-color:red)[Military]] (else-if: $military is 1)[(text-color:green)[Military]]
+(if: $politics is 0)[[[Help make decisions for politicians|Politics]]] (else-if: $politics is -1)[(text-colour:red)[Political Decisions]] (else-if: $politics is 1)[(text-colour:green)[Political Decisions]]
+(if: $market is 0)[[[Help the rich with market modeling/predictions|Market]]] (else-if: $market is -1)[(text-color:red)[Market Modeling]] (else-if: $market is 1)[(text-color:green)[Market Modeling]]
+
+(if: $climate is not 0 and $military is not 0 and $politics is not 0 and $market is not 0)[[[Submit Year Plan|Year 4 Results]]]</tw-passagedata><tw-passagedata pid="50" name="World Ends" tags="" position="200,3100" size="100,100">Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!</tw-passagedata><tw-passagedata pid="51" name="World Saved" tags="" position="600,3100" size="100,100">Whew-that was a close call. Unknown to the world, you’ve saved humanity. However, everything you’ve worked on for the past 4 years has been erased along with Lucidity. It is okay to feel sad, but you did the right thing. But remember, Dr. Roko, you’re still a genius with many years left in your career, and we hope you find it possible to try again!</tw-passagedata><tw-passagedata pid="52" name="Climate Change" tags="" position="0,3300" size="100,100">INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE
+FEBRUARY 27th, 2039
+
+Proposal – Solve Climate Change
+
+The Intergovernmental Panel on Climate Change comes to you with the proposition from several countries to regulate the ongoing climate crisis. Lucidity would generate models to optimize energy use and completely phase out the use of fossil fuels within the next five years. 
+
+
+Projected Profits: $(String: 2,500)K
+
+[[Accept|Climate Accept]]
+[[Refuse|Climate Refuse]]
+[[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="53" name="Military" tags="" position="800,3300" size="100,100">VARIOUS GOVERNMENTS
+MARCH 9th, 2039
+
+Proposal – AI Directed Military Strategies
+
+A group of governments want to use Lucidity for the ability to generate the best strategies for defending or invading territories, and for winning key battles. Lucidity will analyze past campaigns and learn from the greatest leaders across history. This will be a critical asset to the security of these nations. 
+
+Projected Profits: $(String: 4,200)K
+
+[[Accept|Military Accept]]
+[[Refuse|Military Refuse]]
+[[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="54" name="Politics" tags="" position="100,3800" size="100,100">U.S. BRANCH OF PUBLIC POLICY
+AUGUST 12th, 2039
+
+Proposal – Improve Public Policy with AI
+
+The executive branch of the government would like to use Lucidity to determine the best course of action in terms of public policy decisions and implementation. Rather than having two political parties debating aimlessly, Lucidity would provide a clear-minded third party solution to congresspeople and to executive officials. A special unit will be created to provide training scenarios and define the best course of action for Lucidity. 
+
+Projected Profits: $(String: 3,600)K
+
+[[Accept|Politics Accept]]
+[[Refuse|Politics Refuse]]
+[[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="55" name="Market" tags="" position="700,3800" size="100,100">SOCIALITES OF INVESTMENT
+DECEMBER 27th, 2039
+
+Proposal – Stock Market Decisions
+
+The Socialites of Investment is a group of the nation’s leading experts in the financial sector. We are requesting AI assistance in predicting fluctuations in the stock market, as well as the best course of action to take to maximize profits. We believe that Lucidity can help us revolutionize the economy forever. 
+
+Projected Profits: $(String: 5,800)K
+
+[[Accept|Market Accept]]
+[[Refuse|Market Refuse]]
+[[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="56" name="Year 4 Results" tags="" position="400,4000" size="100,100">(if: $refusedmoney &gt; 6000)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.]
+(else-if: $sentience &lt; 9)[Brilliant work, Dr. Roko! Your company has gained international acclaim, and Lucidity has helped billions around the world! You are awarded Nobel Prizes in Economic Sciences, Peace, and Physiology. Through the power of AI, you’ve changed humanity for the better. Congratulations!]
+(else:)[Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!]</tw-passagedata><tw-passagedata pid="57" name="Climate Accept" tags="" position="200,3300" size="100,100">On the brink of no return from the climate crisis, the world’s governments commit to Lucidity’s plan. They cut out fossil fuel emissions, sequester carbon, and become sustainable nations. Although the damage that has already been done to the environment these past decades continues, the long term survival of the Earth is at last secured.
+(set: $Money = $Money + 2500)(set: $Sentience = $Sentience - 2)(set: $climate = 1)
+[[You&#39;ve earned $(str: 2,500)K|Year 4]]</tw-passagedata><tw-passagedata pid="58" name="Climate Refuse" tags="" position="100,3500" size="100,100">(set: $climate = -1)
+(set: $refusedmoney = $refusedmoney + 2500)
+[[You&#39;ve refused to solve Climate Change|Year 4]]</tw-passagedata><tw-passagedata pid="59" name="Military Accept" tags="" position="600,3300" size="100,100">With the new technology in place, a new type of arms race begins between some parts of the world– the race for the best AI strategist. You wonder how long will it be until tensions are on the brink…
+(set: $Money = $Money + 4200)(set: $Sentience = $Sentience + 4)(set: $military = 1)
+[[You&#39;ve earned $(str: 4,200)K|Year 4]]</tw-passagedata><tw-passagedata pid="60" name="Military Refuse" tags="" position="700,3500" size="100,100">(set: $military = -1)
+(set: $refusedmoney = $refusedmoney + 4200)
+[[You&#39;ve refused the Military Strategy|Year 4]]</tw-passagedata><tw-passagedata pid="61" name="Politics Accept" tags="" position="200,3600" size="100,100">At first, it seems like a good idea for Lucidity to help make decisions for everyone in the country. After all, a computer program would definitely be less biased than a bunch of money-loving politicians. However, the government trains Lucidity to make decisions based on the optimal fiscal health of the nation, rather than with the central goal of helping as many people as possible. Sometimes, Lucidity provides insightful solutions such as how to alleviate inequality, or updating infrastructure. But often, it proposes sacrificing people’s wellbeing in order to cement the US’s status as the world’s leading economy and political power.
+(set: $Money = $Money + 3600)(set: $Sentience = $Sentience + 3)(set: $politics = 1)
+[[You&#39;ve earned $(str: 3,600)K|Year 4]]</tw-passagedata><tw-passagedata pid="62" name="Politics Refuse" tags="" position="300,3900" size="100,100">(set: $politics = -1)
+(set: $refusedmoney = $refusedmoney + 3600)
+[[You&#39;ve refused the Political Decisions|Year 4]]</tw-passagedata><tw-passagedata pid="63" name="Market Accept" tags="" position="600,3600" size="100,100">With the power of Lucidity, these investors leverage the economy to their benefit. They form a new circle of elite wealth, even above Wall Street and the “old money” clans of the east coast. More monopolies form, and income inequality is exacerbated greatly.
+(set: $Money = $Money + 5800)(set: $Sentience = $Sentience + 3 )(set: $market = 1)
+[[You&#39;ve earned $(str: 5,800)K|Year 4]]</tw-passagedata><tw-passagedata pid="64" name="Market Refuse" tags="" position="500,3900" size="100,100">(set: $market = -1)
+(set: $refusedmoney = $refusedmoney + 5800)
+[[You&#39;ve refused the Market Modeling|Year 4]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
