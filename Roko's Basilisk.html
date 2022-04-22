@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Roko&#39;s Basilisk.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.16" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
+<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.15" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }</script><tw-passagedata pid="1" name="Game Intro" tags="" position="400,0" size="100,100">//Display on.
 Initializing capabilities… Please be patient…
@@ -21,7 +21,8 @@ Ready to receive instructions and training data.
 PLEASE PROVIDE YOUR AUTHORIZATION KEY:// #sgdazrhkhrj314
 // Welcome to LUCIDITY, Dr. Roko.//
 
-[[We are ready to begin.|Tutorial]]</tw-passagedata><tw-passagedata pid="2" name="Game Start" tags="" position="400,400" size="100,100">It is your first week, and you have received an offer from a small engineering company. They need help with mechanical operation– automating machinery for the industrial setting. This research will skyrocket efficiency and output in the industry but inevitably will displace the income of many blue-collar workers.
+[[We are ready to begin.|Tutorial]]
+[[Works Consulted|Works Consulted]]</tw-passagedata><tw-passagedata pid="2" name="Game Start" tags="" position="400,400" size="100,100">It is your first week, and you have received an offer from a small engineering company. They need help with mechanical operation– automating machinery for the industrial setting. This research will skyrocket efficiency and output in the industry but inevitably will displace the income of many blue-collar workers.
 [[Your Automation Task|Factory Automation]]</tw-passagedata><tw-passagedata pid="3" name="Factory Automation" tags="" position="400,600" size="100,100">Larkspur Manufacturing Co.
 January 8th, 2036
 
@@ -282,9 +283,9 @@ Lucidity AI is the leading tech company of the modern day. Governments worldwide
 (set: $refusedmoney = $refusedmoney + 1500)
 [[You&#39;ve refused the Smart Missiles|Year 3]]</tw-passagedata><tw-passagedata pid="49" name="Year 4" tags="" position="400,3600" size="100,100">Current money: $(string: $Money)K
 Refused money: $(string: $refusedmoney)K
-Your investors will let you refuse $(string: 6,000)k before firing you.
+Your investors will let you refuse $(string: 6),000k before firing you.
 
-Year 3 Proposals
+Year 4 Proposals
 (if: $climate is 0)[[[Help create models for solving climate change|Climate Change]]] (else-if: $climate is -1)[(text-color:red)[Climate Change]] (else-if: $climate is 1)[(text-color:green)[Climate Change]]
 (if: $military is 0)[[[Strategize for the military|Military]]] (else-if: $military is -1)[(text-color:red)[Military]] (else-if: $military is 1)[(text-color:green)[Military]]
 (if: $politics is 0)[[[Help make decisions for politicians|Politics]]] (else-if: $politics is -1)[(text-colour:red)[Political Decisions]] (else-if: $politics is 1)[(text-colour:green)[Political Decisions]]
@@ -353,7 +354,9 @@ Projected Profits: $(String: 5,800)K
 (set: $Money = $Money + 5800)(set: $Sentience = $Sentience + 3 )(set: $market = 1)
 [[You&#39;ve earned $(str: 5,800)K|Year 4]]</tw-passagedata><tw-passagedata pid="64" name="Market Refuse" tags="" position="500,3900" size="100,100">(set: $market = -1)
 (set: $refusedmoney = $refusedmoney + 5800)
-[[You&#39;ve refused the Market Modeling|Year 4]]</tw-passagedata></tw-storydata>
+[[You&#39;ve refused the Market Modeling|Year 4]]</tw-passagedata><tw-passagedata pid="65" name="Works Consulted" tags="" position="705,36.666666666666664" size="100,100">###Works Consulted
+Hoang, Kenny, et al. Intelligence...?, 6 May 2021, https://preyneyv.github.io/engl-1102-artifact-3/. 
+Marr, B. (2020, October 15). 10 wonderful examples of using artificial intelligence (AI) for good. Forbes. Retrieved April 22, 2022, from https://www.forbes.com/sites/bernardmarr/2020/06/22/10-wonderful-examples-of-using-artificial-intelligence-ai-for-good/?sh=db651162f95e </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
