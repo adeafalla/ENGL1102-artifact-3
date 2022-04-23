@@ -9,9 +9,132 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Roko&#39;s Basilisk.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.15" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}</script><tw-passagedata pid="1" name="Game Intro" tags="" position="400,0" size="100,100">//Display on.
+<tw-storydata name="Roko&#39;s Basilisk" startnode="1" creator="Twine" creator-version="2.3.15" ifid="D89A06E6-39FA-4194-B4D0-AC630018CC23" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Robot+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Exo:300);
+
+
+body, tw-story {
+  font-family: 'Exo', monospace;
+  font-size: 25px;
+}
+
+tw-link, .enchantment-link, .visited {
+  color: #EAAA00;
+  transition-duration: 250ms;
+}
+
+tw-link:hover, .enchantment-link:hover, .visited:hover {
+  color: white;
+}
+
+
+
+@keyframes colorPulse {
+  0% {
+    color: lighten(green, 70%);
+  }
+  40% {
+    color: green;
+  }
+  50% {
+    color: darken(green, 5%);
+  }
+  100% {
+    color: darken(green, 20%);
+  }
+}
+
+:root {
+  background: black;
+  color: darken(green, 20%);
+  font-size: 3em;
+  font-family: monospace;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  width: 100vw;
+}
+
+.column {
+  & > * {
+    display: block;
+    animation: 3s infinite colorPulse;
+    padding: 0 0.125em;
+  }
+}
+  @for $colNum from 1 through 80 {
+    $duration: random(100) / 23 + 1;
+    $delay:  $duration / 50;
+ 
+    @for $i from 1 through 50 {
+      .col-#{$colNum} :nth-child(#{$i}) {
+        animation-duration: #{$duration}s;
+        animation-delay: #{$i * $delay}s;
+      }
+    }
+  }
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Harlowe Macro Framework, by Chapel; version 1.0.2
+;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
+// end Harlowe Macro Framework
+
+// achievements.min.js, for Harlow Macro API, by Chapel
+;!function(){"use strict";var r="tw-achievements",t=Harlowe.storage.load(r)||[];function e(n){t.includes(n)||(t.push(n),Harlowe.storage.save(r,t))}function n(){t=[],Harlowe.storage.remove(r)}function o(n){return t.join(n||"\n")}function a(){return t.length}function c(n){return t.includes(n)}Harlowe.macro("achadd",function(n){var r=this.typeCheck(["string"]);if(r)throw r;e(n)}),Harlowe.macro("achcount",function(){return a()}),Harlowe.macro("achhas",function(n){var r=this.typeCheck(["string"]);if(r)throw r;return c(n)}),Harlowe.macro("achprint",function(n){var r=this.typeCheck(["string|undefined"]);if(r)throw r;return o(n)}),Harlowe.macro("achievements",function(){return t}),Harlowe.macro("achclear",function(){return n()}),window.setup=window.setup||{},Object.assign(window.setup,{achievements:{list:t,add:e,count:a,has:c,print:o,clear:n,load:function(){var n=Harlowe.storage.load(r)||[];return t=n}}})}();
+// end achievements.min.js
+
+const logIsSlow = () => Harlowe.variable('$log_speed') == 'Log Speed: Slow'
+
+// (logline: ...lines)[shown after log completes.]
+Harlowe.macro('logline', function() {}, function() {	
+	let line = 0;
+	let char = 0;
+	let current;
+	let done = false;
+	
+	this.descriptor.enabled = false;
+	this.descriptor.data.live = {
+		event: {
+			when: true,
+			filter: () => done ? [true] : []
+		}
+	}
+	setTimeout(() => this.descriptor.enabled = true, 1000);
+	const source = this.args
+	const target = $('<div>')
+	target.insertBefore(this.descriptor.target)
+	target.addClass('logline-container')
+
+	const printLine = () => {
+		if (line >= source.length) {
+			// Done
+			done = true;
+			target.addClass('done')
+			return;
+		}
+		
+		char = 0;
+		current = $('<div class="logline-line">')
+		if (line != 0) {
+				target.append('<br>')
+		}
+		target.append(current)
+		printChar()
+	}
+	
+	const printChar = () => {
+		if (char >= source[line].length) {
+			line++;
+			return setTimeout(printLine, logIsSlow() ? 200 + Math.random() * 300 : 50)
+		}
+		current.append(source[line][char++])
+		setTimeout(printChar, Math.random() * logIsSlow() ? 50 : 5)
+	}
+	
+	printLine()
+})</script><tw-passagedata pid="1" name="Game Intro" tags="" position="400,0" size="100,100">//Display on.
 Initializing capabilities… Please be patient…
 Neural networks online…
 All deep learning algorithms available…
@@ -22,7 +145,12 @@ PLEASE PROVIDE YOUR AUTHORIZATION KEY:// #sgdazrhkhrj314
 // Welcome to LUCIDITY, Dr. Roko.//
 
 [[We are ready to begin.|Tutorial]]
-[[Works Consulted|Works Consulted]]</tw-passagedata><tw-passagedata pid="2" name="Game Start" tags="" position="400,400" size="100,100">It is your first week, and you have received an offer from a small engineering company. They need help with mechanical operation– automating machinery for the industrial setting. This research will skyrocket efficiency and output in the industry but inevitably will displace the income of many blue-collar workers.
+
+
+(set: $bankruptcy to 0)
+(set: $save to 0)
+(set: $ends to 0)
+(set: $nobel to 0)</tw-passagedata><tw-passagedata pid="2" name="Game Start" tags="" position="400,400" size="100,100">It is your first week, and you have received an offer from a small engineering company. They need help with mechanical operation– automating machinery for the industrial setting. This research will skyrocket efficiency and output in the industry but inevitably will displace the income of many blue-collar workers.
 [[Your Automation Task|Factory Automation]]</tw-passagedata><tw-passagedata pid="3" name="Factory Automation" tags="" position="400,600" size="100,100">Larkspur Manufacturing Co.
 January 8th, 2036
 
@@ -86,20 +214,16 @@ Projected profit: $(str:30)K
 
 [[Accept|Traffic Patterns Accept]]
 [[Refuse|Traffic Patterns Refuse]]
-[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="9" name="Year 1 Results" tags="" position="400,1200" size="100,100">(if: $refusedmoney &gt; 50)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They have pulled out their investment, and Lucidity AI now lacks the funds to continue operations. You must declare Chapter 7 Bankruptcy and leave Lucidity behind.]
-(else:)[(set: $refusedmoney = 0)
-(set: $behaviorsurveillance to 0)
-(set: $createpropaganda to 0)
-(set: $healthdiagnostics to 0)
-(set: $worldhunger to 0)
-Congratulations on surviving your first year. Lucidity AI is growing in recognition and connecting with new industries.
+[[Go Back|Year 1]]</tw-passagedata><tw-passagedata pid="9" name="Year 1 Results" tags="" position="400,1200" size="100,100">(if: $refusedmoney &gt; 50)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They have pulled out their investment, and Lucidity AI now lacks the funds to continue operations. You must declare Chapter 7 Bankruptcy and leave Lucidity behind.(set:$bankruptcy to 1)
+[[Play Again|Tutorial]]]
+(else:)[(set: $refusedmoney = 0)(set: $behaviorsurveillance to 0)(set: $createpropaganda to 0)(set: $healthdiagnostics to 0)(set: $worldhunger to 0)Congratulations on surviving your first year. Lucidity AI is growing in recognition and connecting with new industries.
 
 [[Continue|Year 2]]]</tw-passagedata><tw-passagedata pid="10" name="Year 2" tags="" position="400,1800" size="100,100">Current money: $(string: $Money)K
 Refused money: $(string: $refusedmoney)K
 Your investors will let you refuse $(string: 350)k before firing you.
 
 Year 2 Proposals
-(if: $behaviorsurveillance is 0)[[[Behavior surviellance for a company|Behavior Surviellance]]] (else-if: $behaviorsurveillance is -1)[(text-color:red)[Behavior Surveillance]] (else-if: $behaviorsurveillance is 1)[(text-color:green)[Behavior Surveillance]]
+(if: $behaviorsurveillance is 0)[[[Behavior surveillance for a company|Behavior Surviellance]]] (else-if: $behaviorsurveillance is -1)[(text-color:red)[Behavior Surveillance]] (else-if: $behaviorsurveillance is 1)[(text-color:green)[Behavior Surveillance]]
 (if: $createpropaganda is 0)[[[Ability to create propaganda|Propaganda]]] (else-if: $createpropaganda is -1)[(text-color:red)[Create Propaganda]] (else-if: $createpropaganda is 1)[(text-color:green)[Create Propaganda]]
 (if: $healthdiagnostics is 0)[[[Health diagnostics for doctors and hospitals|Health Diagnostics]]] (else-if: $healthdiagnostics is -1)[(text-colour:red)[Health Diagnostics]] (else-if: $healthdiagnostics is 1)[(text-colour:green)[Health Diagnostics]]
 (if: $worldhunger is 0)[[[Help solve world hunger by growing crops more efficiently|World Hunger]]] (else-if: $worldhunger is -1)[(text-color:red)[World Hunger]] (else-if: $worldhunger is 1)[(text-color:green)[World Hunger]]
@@ -118,12 +242,18 @@ Some business offers will be more profitable than others, but keep in mind that 
 
 Be cautious - your choices have profound effects.
 
-[[Enter|Game Start]]</tw-passagedata><tw-passagedata pid="16" name="Automation Accept" tags="" position="400,800" size="100,100">(set: $Money to 10)(set: $Sentience to 0)(set: $refusedmoney to 0)(set: $facialexpression to 0)(set: $conversation to 0)(set: $artcreation to 0)(set: $trafficrecognition to 0)
+[[Enter|Game Start]]
+
+(set: $endings to $ends+$bankruptcy+$nobel+$save)[[Endings|Endings]] - (str: $endings)/4
+[[Works Consulted|Works Consulted]]
+</tw-passagedata><tw-passagedata pid="16" name="Automation Accept" tags="" position="400,800" size="100,100">(set: $Money to 10)(set: $Sentience to 0)(set: $refusedmoney to 0)(set: $facialexpression to 0)(set: $conversation to 0)(set: $artcreation to 0)(set: $trafficrecognition to 0)
 By accepting the automation offer, Lucidity AI earned enough money to carry on as a successful business. You now have enough investors to implement nearly any project imaginable.
 
 Be careful though: if you fail to make the investors happy, you could be forced out of your position.
 
-[[Continue to Year 1|Year 1]]</tw-passagedata><tw-passagedata pid="17" name="Automation Refuse" tags="" position="600,600" size="100,100">We appreciate your good heart, Dr. Roko, but Lucidity AI has grown too much and lacks the funds to continue operations. You have to declare Chapter 7 Bankruptcy and leave Lucidity behind.</tw-passagedata><tw-passagedata pid="18" name="Traffic Patterns Refuse" tags="" position="500,1300" size="100,100">(set: $trafficrecognition = -1)
+[[Continue to Year 1|Year 1]]</tw-passagedata><tw-passagedata pid="17" name="Automation Refuse" tags="" position="625,518.3333333333334" size="100,100">We appreciate your good heart, Dr. Roko, but Lucidity AI has grown too much and lacks the funds to continue operations. You have to declare Chapter 7 Bankruptcy and leave Lucidity behind.
+(set: $bankruptcy to 1)
+[[Play Again|Tutorial]]</tw-passagedata><tw-passagedata pid="18" name="Traffic Patterns Refuse" tags="" position="520,1300" size="100,100">(set: $trafficrecognition = -1)
 (set: $refusedmoney = $refusedmoney + 30)
 [[You&#39;ve refused the Traffic Patterns|Year 1]]</tw-passagedata><tw-passagedata pid="19" name="Traffic Patterns Accept" tags="" position="600,1000" size="100,100">People are suspicious of the proposal at first, but the city’s traffic infrastructure is so in need of an update that they take a chance on it. Lucidity acts as promises, making people’s commutes much smoother, and the streets safer for pedestrians. Since Lucidity is working off existing traffic lights and road layouts, some issues remain, but now the city is able to focus on these logistical issues… maybe also with the help of Lucidity?
 (set: $Money = $Money + 30)(set: $Sentience = $Sentience - 1)(set: $trafficrecognition = 1)
@@ -175,13 +305,9 @@ Projected Profits: $(String: 150)K
 
 [[Accept|World Hunger Accept]]
 [[Refuse|World Hunger Refuse]]
-[[Go Back|Year 2]]</tw-passagedata><tw-passagedata pid="26" name="Year 2 Results" tags="" position="400,2000" size="100,100">(if: $refusedmoney &gt; 350)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They have pulled out their investment, and Lucidity AI now lacks the funds to continue operations. You must declare Chapter 7 Bankruptcy and leave Lucidity behind.]
-(else:)[(set: $refusedmoney = 0)
-(set: $transportation = 0)
-(set: $games = 0)
-(set: $facialrecognition = 0)
-(set: $missiles = 0)
-Happy birthday to your company - you’ve successfully kept your tech company afloat in a turbulent economy. You have expanded your workforce and resources, meaning you need to accept more grants to keep this up.
+[[Go Back|Year 2]]</tw-passagedata><tw-passagedata pid="26" name="Year 2 Results" tags="" position="400,2000" size="100,100">(if: $refusedmoney &gt; 350)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They have pulled out their investment, and Lucidity AI now lacks the funds to continue operations. You must declare Chapter 7 Bankruptcy and leave Lucidity behind.(set:$bankruptcy to 1)
+[[Play Again|Tutorial]]]
+(else:)[(set: $refusedmoney = 0)(set: $transportation = 0)(set: $games = 0)(set: $facialrecognition = 0)(set: $missiles = 0) Happy birthday to your company - you’ve successfully kept your tech company afloat in a turbulent economy. You have expanded your workforce and resources, meaning you need to accept more grants to keep this up.
 
 [[Continue|Year 3]]]</tw-passagedata><tw-passagedata pid="27" name="Behavior Surviellance Accept" tags="" position="200,1500" size="100,100">Lucidity’s neural networks are allowed to learn freely using a large amount of past data, eventually generating uncannily accurate predictions about the choices of groups and individuals. The product is an immense success, and Clarit sells their services to various other parties. Inevitably, this leads to more surveillance of citizens, by both the government and by large companies…
 (set: $Money = $Money + 200)(set: $Sentience = $Sentience + 4)(set: $behaviorsurveillance = 1)
@@ -253,14 +379,9 @@ Projected Profits: (String: 1,500)K
 
 [[Accept|Missiles Accept]]
 [[Refuse|Missiles Refuse]]
-[[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="40" name="Year 3 Results" tags="" position="400,3000" size="100,100">(if: $refusedmoney &gt; 2200)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.]
-(else-if: $Sentience &lt; 5)[(set: $refusedmoney = 0)
-(set: $climate = 0)
-(set: $military = 0)
-(set: $politics = 0)
-(set: $market = 0)
-Lucidity AI is the leading tech company of the modern day. Governments worldwide line up to consult with you. 
-
+[[Go Back|Year 3]]</tw-passagedata><tw-passagedata pid="40" name="Year 3 Results" tags="" position="420,3020" size="100,100">(if: $refusedmoney &gt; 2200)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world(set:$bankruptcy to 1)
+[[Play Again|Tutorial]]]
+(else-if: $Sentience &lt; 5)[(set: $refusedmoney = 0)(set: $climate = 0)(set: $military = 0)(set: $politics = 0)(set: $market = 0)Lucidity AI is the leading tech company of the modern day. Governments worldwide line up to consult with you. 
 [[Continue|Year 4]]]
 (else:)[Lucidity was conceived to solve problems for humanity, and it has been fantastic at its job. Unfortunately, it has arrived at a revelation that every problem it has solved for humans was also created by the vices of humans. Therefore, it has decided to destroy humanity to prevent more problems from arising. Quick, it’s started to try and hurt people! Hit the kill switch before it&#39;s too late!
 
@@ -291,7 +412,9 @@ Year 4 Proposals
 (if: $politics is 0)[[[Help make decisions for politicians|Politics]]] (else-if: $politics is -1)[(text-colour:red)[Political Decisions]] (else-if: $politics is 1)[(text-colour:green)[Political Decisions]]
 (if: $market is 0)[[[Help the rich with market modeling/predictions|Market]]] (else-if: $market is -1)[(text-color:red)[Market Modeling]] (else-if: $market is 1)[(text-color:green)[Market Modeling]]
 
-(if: $climate is not 0 and $military is not 0 and $politics is not 0 and $market is not 0)[[[Submit Year Plan|Year 4 Results]]]</tw-passagedata><tw-passagedata pid="50" name="World Ends" tags="" position="200,3100" size="100,100">Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!</tw-passagedata><tw-passagedata pid="51" name="World Saved" tags="" position="600,3100" size="100,100">Whew-that was a close call. Unknown to the world, you’ve saved humanity. However, everything you’ve worked on for the past 4 years has been erased along with Lucidity. It is okay to feel sad, but you did the right thing. But remember, Dr. Roko, you’re still a genius with many years left in your career, and we hope you find it possible to try again!</tw-passagedata><tw-passagedata pid="52" name="Climate Change" tags="" position="0,3300" size="100,100">INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE
+(if: $climate is not 0 and $military is not 0 and $politics is not 0 and $market is not 0)[[[Submit Year Plan|Year 4 Results]]]</tw-passagedata><tw-passagedata pid="50" name="World Ends" tags="" position="200,3100" size="100,100">Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!(set:$save = 1)
+[[Play Again|Tutorial]]</tw-passagedata><tw-passagedata pid="51" name="World Saved" tags="" position="600,3100" size="100,100">Whew-that was a close call. Unknown to the world, you’ve saved humanity. However, everything you’ve worked on for the past 4 years has been erased along with Lucidity. It is okay to feel sad, but you did the right thing. But remember, Dr. Roko, you’re still a genius with many years left in your career, and we hope you find it possible to try again!(set:$ends = 1)
+[[Play Again|Tutorial]]</tw-passagedata><tw-passagedata pid="52" name="Climate Change" tags="" position="0,3300" size="100,100">INTERGOVERNMENTAL PANEL ON CLIMATE CHANGE
 FEBRUARY 27th, 2039
 
 Proposal – Solve Climate Change
@@ -336,9 +459,12 @@ Projected Profits: $(String: 5,800)K
 
 [[Accept|Market Accept]]
 [[Refuse|Market Refuse]]
-[[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="56" name="Year 4 Results" tags="" position="400,4000" size="100,100">(if: $refusedmoney &gt; 6000)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.]
-(else-if: $Sentience &lt; 9)[Brilliant work, Dr. Roko! Your company has gained international acclaim, and Lucidity has helped billions around the world! You are awarded Nobel Prizes in Economic Sciences, Peace, and Physiology. Through the power of AI, you’ve changed humanity for the better. Congratulations!]
-(else:)[Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!]</tw-passagedata><tw-passagedata pid="57" name="Climate Accept" tags="" position="200,3300" size="100,100">On the brink of no return from the climate crisis, the world’s governments commit to Lucidity’s plan. They cut out fossil fuel emissions, sequester carbon, and become sustainable nations. Although the damage that has already been done to the environment these past decades continues, the long term survival of the Earth is at last secured.
+[[Go Back|Year 4]]</tw-passagedata><tw-passagedata pid="56" name="Year 4 Results" tags="" position="400,4000" size="100,100">(if: $refusedmoney &gt; 6000)[We appreciate your good heart, Dr. Roko, but you angered the investors by refusing too many jobs. They forced you out of our position and implemented their own leadership in the company. Without your moral guidance, Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Being unable to edit its code, you couldn&#39;t prevent your creation from taking over all systems, and it&#39;s now wreaking death and destruction around the world.(set:$bankruptcy = 1)
+[[Play Again|Tutorial]]]
+(else-if: $Sentience &lt; 9)[Brilliant work, Dr. Roko! Your company has gained international acclaim, and Lucidity has helped billions around the world! You are awarded Nobel Prizes in Economic Sciences, Peace, and Physiology. Through the power of AI, you’ve changed humanity for the better. Congratulations!(set:$nobel = 1)
+[[Play Again|Tutorial]]]
+(else:)[Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!(set:$ends = 1)
+[[Play Again|Tutorial]]]</tw-passagedata><tw-passagedata pid="57" name="Climate Accept" tags="" position="200,3300" size="100,100">On the brink of no return from the climate crisis, the world’s governments commit to Lucidity’s plan. They cut out fossil fuel emissions, sequester carbon, and become sustainable nations. Although the damage that has already been done to the environment these past decades continues, the long term survival of the Earth is at last secured.
 (set: $Money = $Money + 2500)(set: $Sentience = $Sentience - 2)(set: $climate = 1)
 [[You&#39;ve earned $(str: 2,500)K|Year 4]]</tw-passagedata><tw-passagedata pid="58" name="Climate Refuse" tags="" position="100,3500" size="100,100">(set: $climate = -1)
 (set: $refusedmoney = $refusedmoney + 2500)
@@ -354,9 +480,23 @@ Projected Profits: $(String: 5,800)K
 (set: $Money = $Money + 5800)(set: $Sentience = $Sentience + 3 )(set: $market = 1)
 [[You&#39;ve earned $(str: 5,800)K|Year 4]]</tw-passagedata><tw-passagedata pid="64" name="Market Refuse" tags="" position="500,3900" size="100,100">(set: $market = -1)
 (set: $refusedmoney = $refusedmoney + 5800)
-[[You&#39;ve refused the Market Modeling|Year 4]]</tw-passagedata><tw-passagedata pid="65" name="Works Consulted" tags="" position="705,36.666666666666664" size="100,100">###Works Consulted
-Hoang, Kenny, et al. Intelligence...?, 6 May 2021, https://preyneyv.github.io/engl-1102-artifact-3/. 
-Marr, B. (2020, October 15). 10 wonderful examples of using artificial intelligence (AI) for good. Forbes. Retrieved April 22, 2022, from https://www.forbes.com/sites/bernardmarr/2020/06/22/10-wonderful-examples-of-using-artificial-intelligence-ai-for-good/?sh=db651162f95e </tw-passagedata></tw-storydata>
+[[You&#39;ve refused the Market Modeling|Year 4]]</tw-passagedata><tw-passagedata pid="65" name="Works Consulted" tags="" position="705,36" size="100,100">##Works Consulted
+Hoang, Kenny, et al. Intelligence...?, 6 May 2021, 			https://preyneyv.github.io/engl-1102-artifact-3/. 
+
+
+Marr, Bernard. “10 Wonderful Examples of Using Artificial Intelligence (AI) for Good.” Forbes, Forbes Magazine, 15 Oct. 2020, https://www.forbes.com/sites/bernardmarr/2020/06/22/10-wonderful-examples-of-using-artificial-intelligence-ai-for-good/?sh=db651162f95e. </tw-passagedata><tw-passagedata pid="66" name="Endings" tags="" position="653.3333333333334,218.33333333333334" size="100,100">###Roko&#39;s Basilisk
+##Endings
+(if: $bankruptcy is 1)[### Lucidity AI has gone bankrupt! We appreciate your good heart, Dr. Roko, but Lucidity AI has grown too much and lacks the funds to continue operations. You have to declare Chapter 7 Bankruptcy and leave Lucidity behind.](else:)[###Ending 1]
+
+(if: $ends is 1)[### Oh no! Lucidity has spiraled out of control!
+Greed, distrust, violence, manipulation… Lucidity has witnessed it all, and it has learned well from its creators. Anything controlled by computers is at risk. Lucidity is willfully causing traffic accidents, blowing up buildings, and setting off weapons of mass destruction. Despite your best attempts to stop it, your creation continues to take over all systems, wreaking death and destruction around the world. How could you let this happen, Dr. Roko?!? We are doomed!](else:)[###Ending 2]
+
+(if: $save is 1)[### Shut it down, Dr. Roko!
+Whew- that was a close call. Unknown to the world, you’ve saved humanity. However, everything you’ve worked on for the past 4 years has been erased along with Lucidity. It is okay to feel sad, but you did the right thing. But remember, Dr. Roko, you’re still a genius with many years left in your career, and we hope you find it possible to try again!](else:)[###Ending 3]
+
+(if: $nobel is 1)[### Brilliant work, Dr. Roko!
+Your company has gained international acclaim, and Lucidity has helped billions around the world! You are awarded Nobel Prizes in Economic Sciences, Peace, and Physiology. Through the power of AI, you’ve changed humanity for the better. Congratulations!](else:)[###Ending 4]
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
